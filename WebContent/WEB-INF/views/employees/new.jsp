@@ -15,7 +15,7 @@
                 <c:import url="_form.jsp" />
             </form>
 
-            <p><a href=",c:url value='/employees/index' />">一覧に戻る</a></p>
+            <p><a href="<c:url value='/employees/index' />">一覧に戻る</a></p>
         </c:param>
     </c:import>
 
