@@ -20,7 +20,7 @@ import utils.EncryptUtil;
 /**
  * Servlet implementation class EmployeesCreateServlet
  */
-@WebServlet("/employeescreate")
+@WebServlet("/employees/create")
 public class EmployeesCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
