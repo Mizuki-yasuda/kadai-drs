@@ -151,3 +151,20 @@ h3 {
     font-size: larger;
 
 }
+table#customer_list th {
+    font-weight: bold;
+    paddinng: 10px 2%;
+}
+table#customer_list .customer_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#customer_list .customer_date {
+    width:20%;
+}
+table#customer_list .customer_title {
+    width: 37%;
+}
+table#customer_list .customer_action {
+    width: 13%;
+}
