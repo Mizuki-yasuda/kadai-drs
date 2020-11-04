@@ -21,14 +21,14 @@
                   <tr>
                     <th class="customer_name">氏名</th>
                     <th class="customer_date">日付</th>
-                    <th class="customer_title">顧客名</th>
+                    <th class="customer_customer_name">顧客名</th>
                     <th class="customer_action">操作</th>
                  </tr>
                  <c:forEach var="customer" items="${customers}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="customer_name"><c:out value="${customer.employee.name}" /></td>
-                        <td class="customer_date"><fmt:formatDate value="${customer.report_date}" pattern='yyyy-MM-dd' /></td>
-                        <td class="customer_title">${customer.title}</td>
+                        <td class="customer_date"><fmt:formatDate value="${customer.customer_date}" pattern='yyyy-MM-dd' /></td>
+                        <td class="customer_customer_name">${customer.customer_name}</td>
                         <td class="customer_action"><a href="<c:url value='/customers/show?id=${customer.id}' />">詳細を見る</a></td>
                    </tr>
                  </c:forEach>
@@ -37,7 +37,7 @@
 
             <div id="pagination">
             (全 ${customers_count} 件)<br />
-            <c:forEach var="i" begin="1" end="${((cusyomers_count - 1) / 15) + 1}" step="1">
+            <c:forEach var="i" begin="1" end="${((customers_count - 1) / 15) + 1}" step="1">
             <c:choose>
             <c:when test="${i == page}">
                 <c:out value="${i}" />&nbsp;
