@@ -22,7 +22,7 @@ import javax.persistence.Table;
             query = "SELECT c FROM Customer AS c ORDER BY c.id DESC"
             ),
     @NamedQuery(
-            name = "getCustomerCount",
+            name = "getCustomersCount",
             query = "SELECT COUNT(c) FROM Customer AS c"
             ),
 })
@@ -37,8 +37,8 @@ public class Customer {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @Column(name = "report_date", nullable = false)
-    private Date report_date;
+    @Column(name = "customer_date", nullable = false)
+    private Date customer_date;
 
     @Column(name = "customer_name", length = 255, nullable = false)
     private String customer_name;
@@ -69,12 +69,12 @@ public class Customer {
         this.employee = employee;
     }
 
-    public Date getReport_date() {
-        return report_date;
+    public Date getCustomer_date() {
+        return customer_date;
     }
 
-    public void setReport_date(Date report_date) {
-        this.report_date = report_date;
+    public void setCustomer_date(Date customer_date) {
+        this.customer_date = customer_date;
     }
 
     public String getCustomer_name() {
