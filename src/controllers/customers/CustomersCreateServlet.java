@@ -2,6 +2,7 @@ package controllers.customers;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -54,6 +55,10 @@ public class CustomersCreateServlet extends HttpServlet {
             c.setCustomer_name(request.getParameter("customer_name"));
             c.setContent(request.getParameter("content"));
 
+            Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+            c.setCreated_at(currentTime);
+            c.setUpdated_at(currentTime);
+
             List<String> errors = CustomerValidator.validate(c);
             if(errors.size() > 0) {
                 em.close();
@@ -62,7 +67,7 @@ public class CustomersCreateServlet extends HttpServlet {
                 request.setAttribute("customer", c);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/cusstomers/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/customers/new.jsp");
                 rd.forward(request, response);
             } else {
                 em.getTransaction().begin();
