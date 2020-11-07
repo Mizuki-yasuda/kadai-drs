@@ -12,7 +12,7 @@
             <c:choose>
                 <c:when test="${customer != null}">
                     <h2>顧客情報 編集ページ</h2>
-                    <form method="POST" action="<c:url value='?customers/update' />">
+                    <form method="POST" action="<c:url value='/customers/update' />">
                         <c:import url="_form.jsp" />
                     </form>
                 </c:when>
